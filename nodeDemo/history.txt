@@ -1,0 +1,34 @@
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+//Register a listener
+emitter.on('messageLogged', (arg) => console.log('Listener called', arg));
+
+// Raise an event
+emitter.emit('messageLogged', {
+    id: 1,
+    url: 'http://'
+});
+
+// Raise: logging (data: message)
+
+=============================================
+const Logger = require('./logger');
+const logger = new Logger();
+
+//Register a listener
+logger.on('messageLogged', (arg) => console.log('Listener called', arg));
+logger.log('message');
+==============================================
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+Not related this project
+'java script loops'.split('')
+(17) ["j", "a", "v", "a", " ", "s", "c", "r", "i", "p", "t", " ", "l", "o", "o", "p", "s"]
+
+'java script loops'.replace(/\s/g,'').split('');
+(15) ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t", "l", "o", "o", "p", "s"]
+
+'java script loops'.replace(/\s/g,'').split('').join()
+"j,a,v,a,s,c,r,i,p,t,l,o,o,p,s"
